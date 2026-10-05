@@ -34,3 +34,17 @@ Hi, this is Aisha. My coworker was trying to sort out my search not finding thin
 2. ## Resolution 
 
 Upon my checking, the Error means "An instance already running so we couldn't start service twice." There is no any wrong with that. I have check the service status by command line, and it returns me running status of that one. Everything works perfectly.
+
+
+---------4----------------------------------------
+
+1. ## Description:
+
+Hi, this is Elena in Operations. The HR portal won't come up on my PC. It gets as far as the login screen and then throws an error about not being able to reach the database. I asked two people on my team and it's working fine for them, so I don't think it's the system itself — it's just mine. I need to get timesheets approved today.
+
+![alt text](image-1.png)
+2. ## Resolution 
+
+The SQL service was stopped caused to unable to connect to the database. I started via CLI and now it is running and you can access HR portal as well.
+
+![alt text](image-3.png)
