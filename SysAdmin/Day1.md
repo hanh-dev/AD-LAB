@@ -48,3 +48,17 @@ Hi, this is Elena in Operations. The HR portal won't come up on my PC. It gets a
 The SQL service was stopped caused to unable to connect to the database. I started via CLI and now it is running and you can access HR portal as well.
 
 ![alt text](image-3.png)
+
+
+-------5--------------------------
+
+1. ## Description:
+
+Hi, Devon here. Copy and paste has just stopped on my PC. Ctrl+C does nothing, right-click Copy does nothing, and it's the same in every program — the spreadsheet, the browser, even dragging text between two folders. I've been retyping stock numbers by hand all morning. I haven't installed anything new that I know of.
+
+2. ## Resolution 
+2.1 Restart Window Explorer to rebuild the clipboard
+![alt text](image-4.png)
+
+3. ## Root cause
+The clipboard chain on this machine is wedged — a clipboard-history helper Devon picked up at some point has hold of it and is not letting go. That is why it fails identically in every program: copy and paste are not app features, they are shell features, so when the shell's clipboard breaks, everything breaks at once. The fix is the standard one and it is on this machine, not in the directory and not in any app: open Task Manager, select Windows Explorer, and click Restart — the button says Restart rather than End task, because ending the shell outright would leave him with no desktop. Restarting rebuilds the shell and the clipboard chain with it. Reproduce the fault first in File Explorer (select a file, Copy is dead), restart the shell, then copy and paste something in front of him so he can see it working before you close.
